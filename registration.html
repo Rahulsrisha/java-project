@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillSwap Registration</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #283593, #7986cb);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.register-container {
+    background: white;
+    width: 420px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.register-container h1 {
+    color: #283593;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.register-container p {
+    text-align: center;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    margin-bottom: 15px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    outline: none;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+    border-color: #3949ab;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 13px;
+    background: #3949ab;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.register-btn:hover {
+    background: #1a237e;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #3949ab;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.home-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #3949ab;
+    text-decoration: none;
+}
+
+@media(max-width: 480px) {
+    .register-container {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="register-container">
+
+    <h1>SkillSwap</h1>
+    <p>Create Your New Account</p>
+
+    <form action="#" method="post">
+
+        <div class="input-box">
+            <label>Full Name</label>
+            <input type="text"
+            placeholder="Enter your full name" required>
+        </div>
+
+        <div class="input-box">
+            <label>Email Address</label>
+            <input type="email"
+            placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-box">
+            <label>Password</label>
+            <input type="password"
+            placeholder="Create password"
+            minlength="6" required>
+        </div>
+
+        <div class="input-box">
+            <label>Confirm Password</label>
+            <input type="password"
+            placeholder="Confirm your password"
+            minlength="6" required>
+        </div>
+
+        <button type="submit" class="register-btn">
+            Register Now
+        </button>
+
+    </form>
+
+    <div class="login-link">
+        Already have an account?
+        <a href="login.html">Login</a>
+    </div>
+
+    <a href="index.html" class="home-link">
+        ← Back to Home
+    </a>
+
+</div>
+
+</body>
+</html>

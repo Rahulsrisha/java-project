@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Swap - Home</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f7fc;
+    color: #222;
+}
+
+/* Navigation */
+header {
+    background: #283593;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 16px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 75px 20px;
+    background: linear-gradient(120deg, #3949ab, #7986cb);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.search {
+    padding: 14px;
+    width: 300px;
+    border: none;
+    border-radius: 6px;
+}
+
+.btn {
+    padding: 14px 22px;
+    background: #ffca28;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Categories */
+section {
+    padding: 45px 8%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #283593;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.category {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #ddd;
+    font-size: 18px;
+}
+
+/* Skill Cards */
+.skills {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #ddd;
+    text-align: center;
+}
+
+.card h3 {
+    color: #283593;
+    margin: 12px;
+}
+
+.card p {
+    margin: 10px;
+    color: #555;
+}
+
+.card button {
+    background: #3949ab;
+    color: white;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background: #283593;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 30px;
+}
+
+@media(max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 8px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .search {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">SkillSwap</div>
+
+    <nav>
+        <a href="#categories">Skills</a>
+        <a href="#exchange">Exchange</a>
+        <a href="#contact">Contact</a>
+          <a href="file:///U:/Skill-Swap/profile.html">Profile</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Share Your Skills, Learn New Skills!</h1>
+    <p>Connect with people and exchange knowledge for free.</p>
+
+    <input class="search" type="text"
+    placeholder="Search for a skill...">
+
+    <button class="btn">Search</button>
+</div>
+
+<section id="categories">
+    <h2>Explore Skill Categories</h2>
+
+    <div class="categories">
+        <div class="category">💻 Programming</div>
+        <div class="category">🎨 Graphic Design</div>
+        <div class="category">📸 Photography</div>
+        <div class="category">🗣️ Languages</div>
+        <div class="category">🎵 Music</div>
+        <div class="category">📊 Marketing</div>
+    </div>
+</section>
+
+<section id="exchange">
+    <h2>Popular Skill Exchanges</h2>
+
+    <div class="skills">
+
+        <div class="card">
+            <div style="font-size:45px">💻</div>
+            <h3>Web Development</h3>
+            <p>Learn HTML, CSS and JavaScript.</p>
+            <p>Exchange: English Speaking</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <div style="font-size:45px">🎨</div>
+            <h3>Graphic Design</h3>
+            <p>Learn creative design skills.</p>
+            <p>Exchange: Python Programming</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <div style="font-size:45px">📸</div>
+            <h3>Photography</h3>
+            <p>Learn professional photography.</p>
+            <p>Exchange: Video Editing</p>
+            <button>View Details</button>
+        </div>
+
+    </div>
+</section>
+
+<footer id="contact">
+    <p>© 2026 SkillSwap Project</p>
+    <p>Learn Together | Share Together</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Swap - Student Profile</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #eef2ff;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #0002;
+}
+
+h1 {
+    text-align: center;
+    color: #4338ca;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.photo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.photo img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #6366f1;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 85px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    margin-top: 22px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3730a3;
+}
+
+#message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color: green;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Skill Swap</h1>
+<p class="subtitle">Create Your Student Profile</p>
+
+<form id="profileForm">
+
+<div class="photo">
+    <img id="preview"
+    src="https://placehold.co/110x110?text=Photo"
+    alt="Profile Preview">
+
+    <input type="file" id="photo"
+    accept="image/*">
+</div>
+
+<label>Full Name</label>
+<input type="text" id="name"
+placeholder="Enter your full name" required>
+
+<label>Email Address</label>
+<input type="email" id="email"
+placeholder="Enter your email" required>
+
+<label>Mobile Number</label>
+<input type="tel" id="mobile"
+placeholder="Enter 10 digit mobile number"
+pattern="[0-9]{10}" required>
+
+<label>College Name</label>
+<input type="text" id="college"
+placeholder="Enter college name" required>
+
+<label>Course</label>
+<select id="course" required>
+    <option value="">Select Course</option>
+    <option>MCA</option>
+    <option>MBA</option>
+    <option>BCA</option>
+    <option>B.Tech</option>
+    <option>Degree</option>
+</select>
+
+<label>Gender</label>
+<select id="gender" required>
+    <option value="">Select Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+    <option>Other</option>
+</select>
+
+<label>Skills I Can Teach</label>
+<input type="text" id="teach"
+placeholder="Example: Java, Python, HTML" required>
+
+<label>Skills I Want To Learn</label>
+<input type="text" id="learn"
+placeholder="Example: SQL, React, PHP" required>
+
+<label>About Me</label>
+<textarea id="bio"
+placeholder="Write something about yourself..."
+required></textarea>
+
+<button type="submit">Save Profile</button>
+
+</form>
+
+<p id="message"></p>
+
+</div>
+
+<script>
+
+// Profile photo preview
+document.getElementById("photo").addEventListener("change",
+function(event) {
+
+    const file = event.target.files[0];
+
+    if (file) {
+        if (!file.type.startsWith("image/")) {
+            alert("Please select an image file.");
+            event.target.value = "";
+            return;
+        }
+
+        document.getElementById("preview").src =
+        URL.createObjectURL(file);
+    }
+});
+
+// Form submission
+document.getElementById("profileForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const mobile = document.getElementById("mobile").value;
+
+    if (!/^[0-9]{10}$/.test(mobile)) {
+        alert("Enter a valid 10 digit mobile number");
+        return;
+    }
+
+    const profile = {
+        name: name,
+        email: document.getElementById("email").value,
+        mobile: mobile,
+        college: document.getElementById("college").value,
+        course: document.getElementById("course").value,
+        gender: document.getElementById("gender").value,
+        teach: document.getElementById("teach").value,
+        learn: document.getElementById("learn").value,
+        bio: document.getElementById("bio").value
+    };
+
+    localStorage.setItem(
+        "studentProfile",
+        JSON.stringify(profile)
+    );
+
+    document.getElementById("message").innerText =
+    "Profile created successfully! Welcome " + name;
+
+});
+
+</script>
+
+</body>
+</html>
